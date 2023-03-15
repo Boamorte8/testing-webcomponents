@@ -1,0 +1,5 @@
+@import "open-props/style";
+
+body {
+  background: var(--stone-10);
+}

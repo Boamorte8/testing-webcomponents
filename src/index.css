@@ -2,4 +2,28 @@
 
 body {
   background: var(--stone-10);
+  font-family: var(--font-sans);
+}
+
+.component {
+  background-color: var(--gray-7);
+  margin-bottom: var(--size-3);
+  border-radius: var(--radius-3);
+  padding: var(--size-3);
+  box-shadow: var(--shadow-2);
+}
+
+.title {
+  color: var(--gray-0);
+  text-align: center;
+}
+
+.subtitle {
+  color: var(--gray-0);
+  margin-top: 0;
+}
+
+.description {
+  color: var(--gray-0);
+  margin-bottom: 0;
 }

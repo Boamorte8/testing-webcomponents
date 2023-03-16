@@ -34,11 +34,11 @@ class BoamorteHeader extends HTMLElement {
 
   render() {
     this.shadowRoot.innerHTML = /* html */`
-    <style>${BoamorteHeader.styles}</style>
-    <header>
-      <img src="boamorte.svg" alt="Boamorte.dev" class="logo">
-      <h1>Boamorte.dev <span>Other text</span></h1>
-    </header>
+      <style>${BoamorteHeader.styles}</style>
+      <header>
+        <img src="boamorte.svg" alt="Boamorte.dev" class="logo">
+        <h1>Boamorte.dev <span>Other text</span></h1>
+      </header>
     `;
   }
 }

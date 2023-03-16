@@ -1,8 +1,20 @@
+const template = document.createElement('template');
+template.innerHTML = /* html */`
+  <style></style>
+  <div class="component">
+    <h2 class="title"></h2>
+    <slot name="boa-card-content"></slot>
+    <p class="description"></p>
+  </div>
+`;
+
 class BoaCard extends HTMLElement {
+  title = this.getAttribute('title') || '';
+  description = this.getAttribute('description') || '';
+
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
-    this.render();
   }
 
   static get styles() {
@@ -27,17 +39,12 @@ class BoaCard extends HTMLElement {
     `;
   }
 
-  render() {
-    this.title = this.hasAttribute('title') ? this.getAttribute('title') : '';
-    this.description = this.hasAttribute('description') ? this.getAttribute('description') : '';
-    this.shadowRoot.innerHTML = /* html */`
-    <style>${BoaCard.styles}</style>
-    <div class="component">
-      <h2 class="title">${this.title}</h2>
-      <slot name="boa-card-content"></slot>
-      <p class="description">${this.description}</p>
-    </div>
-    `;
+  connectedCallback() {
+    const html = template.content.cloneNode((true));
+    html.querySelector('style').textContent = BoaCard.styles;
+    html.querySelector('.title').textContent = this.title;
+    html.querySelector('.description').textContent = this.description;
+    this.shadowRoot.appendChild(html);
   }
 }
 

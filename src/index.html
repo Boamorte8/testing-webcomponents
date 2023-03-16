@@ -15,19 +15,19 @@
 <body>
   <h1 class="title">Testing Web Components</h1>
   <div class="container">
-    <div class="component">
-      <h2 class="subtitle">Header - Basic Web Component</h2>
-      <boamorte-header></boamorte-header>
-      <p class="description">This is the most basic web component. Only it has an extra to update a text after calling a
-        function of web component and passing a parameter</p>
-    </div>
+    <boa-card title="Header - Basic Web Component"
+      description="This is the most basic web component. Only it has an extra to update a text after calling a function of web component and passing a parameter">
+      <boamorte-header slot="boa-card-content"></boamorte-header>
+      <p class="description" slot="boa-card-content">Every card in this page is another web component called BoaCard.
+        This receive title and description by attributes and the content using <a class="link"
+          href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots">slot feature</a>
+      </p>
+    </boa-card>
 
-    <div class="component">
-      <h2 class="subtitle">Label - Basic Web Component</h2>
-      <boa-label text="This is a text" label="This is a label"></boa-label>
-      <p class="description">This is another basic web component. The difference with header is that this one receive a
-        parameter by attribute and listen for changes on attributes</p>
-    </div>
+    <boa-card title="Label - Basic Web Component"
+      description="This is another basic web component. The difference with header is that this one receive a parameter by attribute and listen for changes on attributes">
+      <boa-label text="This is a text" label="This is a label" slot="boa-card-content"></boa-label>
+    </boa-card>
   </div>
 </body>
 

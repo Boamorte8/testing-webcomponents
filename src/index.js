@@ -1,6 +1,9 @@
 import './components/BoaCard';
+import './components/BoaCounter';
+import './components/BoaIncrement';
 import './components/BoaLabel';
 import './components/BoamorteHeader';
+import './components/BoaStep';
 
 const header = document.querySelector('boamorte-header');
 const label = document.querySelector('boa-label');

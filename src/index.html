@@ -29,6 +29,15 @@
       description="This is another basic web component. The difference with header is that this one receive a parameter by attribute and listen for changes on attributes">
       <boa-label text="This is a text" label="This is a label" slot="boa-card-content"></boa-label>
     </boa-card>
+
+    <boa-card title="Events on Web Components"
+      description="This is to testing how to handle events on web components with shadowDOM">
+      <div class="counter" slot="boa-card-content">
+        <boa-increment></boa-increment>
+        <boa-step></boa-step>
+        <boa-counter></boa-counter>
+      </div>
+    </boa-card>
   </div>
 </body>
 

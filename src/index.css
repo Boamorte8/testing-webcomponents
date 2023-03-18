@@ -37,3 +37,9 @@ body::-webkit-scrollbar-thumb {
 .link {
   color: var(--lime-5);
 }
+
+.counter {
+  display: flex;
+  gap: var(--size-2);
+  align-items: center;
+}

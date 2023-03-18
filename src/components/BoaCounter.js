@@ -1,9 +1,9 @@
 const template = document.createElement('template');
 template.innerHTML = /* html */`
   <style></style>
-  <dl>
-    <dt>Counter:</dt>
-    <dd></dd>
+  <dl class='data'>
+    <dt class='label'>Counter:</dt>
+    <dd class='counter'></dd>
   </dl>
 `;
 
@@ -18,21 +18,19 @@ class BoaCounter extends HTMLElement {
 
   static get styles() {
     return /* css */`
-      .button {
-        background-color: var(--teal-7);
+      .data {
+        display: inline-flex;
         border-radius: var(--radius-2);
         padding: var(--size-3);
-        box-shadow: var(--shadow-2);
         color: var(--gray-0);
-        border: none;
+        border: var(--border-size-1) solid var(--gray-1);
       }
     `;
   }
 
   handleEvent(event) {
     if (event.type === 'counter:data-increment') {
-      this.counter = event.detail.counter;
-      console.log(this.counter);
+      this.counter += event.detail.counter;
       this.render();
     }
   }
@@ -45,7 +43,7 @@ class BoaCounter extends HTMLElement {
   render() {
     const html = template.content.cloneNode((true));
     html.querySelector('style').textContent = BoaCounter.styles;
-    // html.querySelector('.step').textContent = this.step;
+    html.querySelector('.counter').textContent = this.counter;
     this.shadowRoot.replaceChildren(html);
   }
 

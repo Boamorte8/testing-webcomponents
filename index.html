@@ -10,8 +10,8 @@
   
   
   <!-- <script type="module" src="./components/boamorte-header.js"></script> -->
-  <script type="module" crossorigin src="/testing-webcomponents/index-24484402.js"></script>
-  <link rel="stylesheet" href="/testing-webcomponents/index-f61b3f67.css">
+  <script type="module" crossorigin src="/testing-webcomponents/index-fa7d58f4.js"></script>
+  <link rel="stylesheet" href="/testing-webcomponents/index-153f3579.css">
 </head>
 
 <body>
@@ -30,6 +30,15 @@
     <boa-card title="Label - Basic Web Component"
       description="This is another basic web component. The difference with header is that this one receive a parameter by attribute and listen for changes on attributes">
       <boa-label text="This is a text" label="This is a label" slot="boa-card-content"></boa-label>
+    </boa-card>
+
+    <boa-card title="Events on Web Components"
+      description="This is to testing how to handle events on web components with shadowDOM">
+      <div class="counter" slot="boa-card-content">
+        <boa-increment></boa-increment>
+        <boa-step></boa-step>
+        <boa-counter></boa-counter>
+      </div>
     </boa-card>
   </div>
 </body>
